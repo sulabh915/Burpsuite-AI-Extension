@@ -45,17 +45,18 @@ Together, these tools extend Burp Suite with **AI-driven analysis and fuzzing** 
    git clone https://github.com/yourname/ai-burp-assistants.git
    cd ai-burp-assistants
    ```
-Create a groq_keys.txt file in the project directory and add one or more API keys, one per line:
+    Create a groq_keys.txt file in the project directory and add one or more API keys, one per line:
+    ```bash
+    gsk_xxxxxxxxxxxxxxxxxxxxx
+    gsk_yyyyyyyyyyyyyyyyyyyyy
+    ```
 
-gsk_xxxxxxxxxxxxxxxxxxxxx
-gsk_yyyyyyyyyyyyyyyyyyyyy
 
+    In Burp Suite:
 
-In Burp Suite:
+    Open Extender → Extensions → Add
 
-Open Extender → Extensions → Add
+    Set Type to Python
 
-Set Type to Python
-
-Load either AIres.py or ai_fuzzer_assistant.py
+    Load either AIres.py or ai_fuzzer_assistant.py
 
