@@ -45,17 +45,16 @@ Together, these tools extend Burp Suite with **AI-driven analysis and fuzzing** 
    git clone https://github.com/yourname/ai-burp-assistants.git
    cd ai-burp-assistants
    ```
- 2.Create a groq_keys.txt file in the project directory and add one or more API keys, one per line:
+   2.Create a groq_keys.txt file in the project directory and add one or more API keys, one per line:
     ```bash
     gsk_xxxxxxxxxxxxxxxxxxxxx
     gsk_yyyyyyyyyyyyyyyyyyyyy
     ```
+  
   3.In Burp Suite:
     Open Extender → Extensions → Add
     Set Type to Python
     Load either AIres.py or ai_fuzzer_assistant.py
-
-
     
 ## 🚀 Usage
 
@@ -70,7 +69,28 @@ Together, these tools extend Burp Suite with **AI-driven analysis and fuzzing** 
 3. The extension will:  
    - Ask AI to generate fuzzing payloads  
    - Apply mutations to the request  
-   - Send requests and display results in a table  
+   - Send requests and display results in a table
+  
+## 📊 Example Output
+
+### 🔎 AIres (Response Analyzer)
+```bash
+[+] Potential security issue:
+Sensitive session token found in Set-Cookie header
+Internal IP address disclosed in response body
+```
+
+
+### 🧪 AI Fuzzer Assistant
+| Parameter | Payload           | Status | Length |
+|-----------|------------------|--------|--------|
+| cat       | 1' OR '1'='1     | 200    | 5123   |
+| login     | test' OR 1=1 --  | 302    | 1220   |
+| Referer   | http://' SLEEP(5)-- | 200 | 4987   |
+
+
+
+
 
 ## ⚠️ Disclaimer
 These extensions are provided for educational use and authorized penetration testing only.
